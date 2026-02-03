@@ -1,6 +1,6 @@
 #set page(
   paper: "a4",
-  margin: (x: 3.5cm, y: 3cm), // Generous margins for "prestige"
+  margin: (x: 3.5cm, y: 3cm),
   numbering: "1",
 )
 
@@ -10,43 +10,101 @@
   lang: "en",
 )
 
-// Configure Headings
-#show heading: set text(font: "Inter", weight: "bold")
-#show heading.where(level: 1): set text(size: 1.4em)
-#show heading.where(level: 2): set text(size: 1.2em, fill: gray.darken(50%))
-
 // Configure Paragraphs
 #set par(
   justify: true,
   leading: 0.65em,
   first-line-indent: 0pt,
+  spacing: 1.5em,
 )
 
-#set par(spacing: 1.5em) // Space between paragraphs
+// Configure Headings
+#show heading: set text(font: "Inter", weight: "bold")
+#show heading.where(level: 1): set text(size: 1.2em, fill: gray.darken(50%))
+#show heading.where(level: 1): set par(justify: false)
+
+// Requirement, "Eq" is optional but recommended
+#set math.equation(numbering: "(Eq. 1)", number-align: bottom)
+
+// Recommended but not required
+#set bibliography(style: "vancouver")
+
+#set figure(caption: [text(size: .8em)[]])
+
+#let appendix(body) = {
+  set heading(numbering: "A", supplement: [Appendix])
+  counter(heading).update(0)
+  body
+}
+
+// --- Title page ---
+
+#page(margin: 5cm, numbering: none)[
+  #set par(justify: false)
+
+  #align(center)[
+    #text(2em)[*Deep Learning-Based Classification of Parkinson's Disease Stages Using DaTSCAN* ]
+  ]
+
+  #place(bottom + right)[
+    #align(right)[
+      Tutor: Adrià Casamitjana
+
+      Student: Arnau K. Deprez Santamaria
+    ]
+  ]
+]
+
+#pagebreak()
+
+// --- Acknowledgements ---
+
+#align(right)[
+
+  #place(horizon + right)[
+    #set par(justify: false)
+    #text(size: 2em)[ *Acknowledgements* ]
+
+    #lorem(20)
+
+    #lorem(50)
+
+    #lorem(30)
+  ]
+]
+
+#pagebreak()
 
 // --- DOCUMENT STARTS HERE ---
 
-= The Impact of Systematic Typography
-== A Study in Document Design
 
-This is a demonstration of an academic layout using _Typst_. By using a Sans-Serif font for headings (Inter) and a Serif font for the body (Linux Libertine), we create a high level of *hierarchy*.
-
-The margins are set to 3.5cm. While this might seem wide, it keeps the "measure" (line length) within the optimal range of 65 characters, which prevents eye fatigue during long reading sessions.
-
-- *Constraint:* "Use Arial."
-- *Solution:* Use a high-quality Sans-Serif for headers to satisfy the "uniform" look while keeping the body text Serif for long-form reading comfort.
-
-#align(center)[
-  #set par(justify: false)
-  == Abstract
-
-  #lorem(77)
-]
 
 #outline()
+// #outline(target: heading.where(supplement: [Appendix]), title: [Appendix])
 
-== Intro
 
-#lorem(30)
 
-#lorem(44)
+= Introduction
+// = Conceptes previs
+// = State of the art
+// = Hipòtesis i objectius
+// = Materials i mètodes
+// = Results
+// = Discussió
+// = Conclusions
+// - Referències.
+// - Annex A. Planificació
+// - Annex B. Codi
+// - Annex C. Pressupost
+// - Annex D. Comitè d'Ètica
+
+
+// Per començar la secció d'apèndixs
+// #show: appendix
+// - Annex A. Planificació
+// - Annex B. Codi
+// - Annex C. Pressupost
+// - Annex D. Comitè d'Ètica
+
+// = Tables and Data <app1>
+// = Additional Listings <app2>
