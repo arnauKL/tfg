@@ -5,12 +5,11 @@
 )
 
 #set text(
-  font: "Linux Libertine", // Sophisticated alternative to Times
-  size: 11pt, // 11pt is often more readable than 12pt
+  font: "Linux Libertine", // Kinda like Times
+  size: 11pt,
   lang: "en",
 )
 
-// Configure Paragraphs
 #set par(
   justify: true,
   leading: 0.65em,
@@ -23,13 +22,14 @@
 #show heading.where(level: 1): set text(size: 1.2em, fill: gray.darken(50%))
 #show heading.where(level: 1): set par(justify: false)
 
-// Requirement, "Eq" is optional but recommended
+// Requirement; "Eq" is optional but recommended
 #set math.equation(numbering: "(Eq. 1)", number-align: bottom)
 
 // Recommended but not required
 #set bibliography(style: "vancouver")
 
-#set figure(caption: [text(size: .8em)[]])
+// A requirement but this is not the way
+//#set figure(caption: [text(size: .8em)[]])
 
 #let appendix(body) = {
   set heading(numbering: "A", supplement: [Appendix])
