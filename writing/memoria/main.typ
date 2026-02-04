@@ -1,7 +1,7 @@
 #set page(
   paper: "a4",
   margin: (x: 3.5cm, y: 3cm),
-  numbering: "1",
+  numbering: none,
 )
 
 #set text(
@@ -39,19 +39,17 @@
 
 // --- Title page ---
 
-#page(margin: 5cm, numbering: none)[
-  #set par(justify: false)
+#set par(justify: false)
 
-  #align(center)[
-    #text(2em)[*Deep Learning-Based Classification of Parkinson's Disease Stages Using DaTSCAN* ]
-  ]
+#align(center)[
+  #text(2em)[*Deep Learning-Based Classification of Parkinson's Disease Stages Using DaTSCAN* ]
+]
 
-  #place(bottom + right)[
-    #align(right)[
-      Tutor: Adrià Casamitjana
+#place(bottom + right)[
+  #align(right)[
+    Tutor: Adrià Casamitjana
 
-      Student: Arnau K. Deprez Santamaria
-    ]
+    Student: Arnau K. Deprez Santamaria
   ]
 ]
 
@@ -73,6 +71,7 @@
   ]
 ]
 
+
 #pagebreak()
 
 // --- DOCUMENT STARTS HERE ---
@@ -83,6 +82,22 @@
 // #outline(target: heading.where(supplement: [Appendix]), title: [Appendix])
 
 
+#align(bottom)[
+  #grid(
+    columns: (auto, 1fr),
+    gutter: 10pt,
+    image("images/by.svg", width: 80pt),
+    text(size: 8pt)[
+      This work is licensed under a Creative Commons Attribution 4.0 International License.
+      Copyright © 2026 Arnau K. Deprez Santamaria.
+    ],
+  )
+]
+
+#pagebreak()
+
+// Start numbering pages from here onwards
+#set page(numbering: "1")
 
 = Introduction
 // = Conceptes previs
