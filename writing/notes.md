@@ -14,8 +14,7 @@ La memòria ha d'estar estructurada en les següents parts:
 8. Conclusions
 - Referències.
 - Annex A. Planificació
-- Annex B. Codi
-- Annex C. Pressupost
+- Annex B. Codi Annex C. Pressupost
 - Annex D. Comitè d'Ètica 
 
 Pot contenir documents addicionals, si es desitja, formant part dels materials
@@ -65,3 +64,9 @@ temps, en cap document no s'hi inclouran figures que no hagin estat citades.
 La numeració de les fórmules seguirà les mateixes pautes que la de les figures.
 Aquest número s'ha de situar entre parèntesis a l'extrem dret de la línia. A fi
 d'evitar confusions aquest número pot identificar-se amb l'abreviatura “Eq.”
+
+---
+
+# typst
+
+Paquet q permet dibuixar NN: [neural-netz](https://typst.app/universe/package/neural-netz)

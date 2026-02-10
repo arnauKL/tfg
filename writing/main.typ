@@ -1,107 +1,62 @@
-#set page(
-  paper: "a4",
-  margin: (x: 3.5cm, y: 3cm),
-  numbering: none,
+#import "tfg_template_ak.typ": *
+
+#show: tfg_template_ak.with(
+  title: [Deep Learning-Based Classification of Parkinson's Disease Stages Using
+    DaTSCAN],
+  short_title: [DL-based Classification of PD's Stages via DaTSCAN],
+  thx: [#include "aknowledgements.typ"],
 )
 
-#set text(
-  font: "Linux Libertine", // Kinda like Times
-  size: 11pt,
-  lang: "en",
-)
+// Project structure:
+// https://sitandr.github.io/typst-examples-book/book/basics/must_know/project_struct.html
 
-#set par(
-  justify: true,
-  leading: 0.65em,
-  first-line-indent: 0pt,
-  spacing: 1.5em,
-)
-
-// Configure Headings
-#show heading: set text(font: "Inter", weight: "bold")
-#show heading.where(level: 1): set text(size: 1.2em, fill: gray.darken(50%))
-#show heading.where(level: 1): set par(justify: false)
-
-// Requirement; "Eq" is optional but recommended
-#set math.equation(numbering: "(Eq. 1)", number-align: bottom)
-
-// Recommended but not required
-#set bibliography(style: "vancouver")
-
-// A requirement but this is not the way
-//#set figure(caption: [text(size: .8em)[]])
-
-#let appendix(body) = {
-  set heading(numbering: "A", supplement: [Appendix])
-  counter(heading).update(0)
-  body
-}
-
-// --- Title page ---
-
-#set par(justify: false)
-
-#align(center)[
-  #text(2em)[*Deep Learning-Based Classification of Parkinson's Disease Stages Using DaTSCAN* ]
-]
-
-#place(bottom + right)[
-  #align(right)[
-    Tutor: Adrià Casamitjana
-
-    Student: Arnau K. Deprez Santamaria
-  ]
-]
-
-#pagebreak()
-
-// --- Acknowledgements ---
-
-#align(right)[
-
-  #place(horizon + right)[
-    #set par(justify: false)
-    #text(size: 2em)[ *Acknowledgements* ]
-
-    #lorem(20)
-
-    #lorem(50)
-
-    #lorem(30)
-  ]
-]
-
-
-#pagebreak()
-
-// --- DOCUMENT STARTS HERE ---
-
-
-
-#outline()
-// #outline(target: heading.where(supplement: [Appendix]), title: [Appendix])
-
-
-#align(bottom)[
-  #grid(
-    columns: (auto, 1fr),
-    gutter: 10pt,
-    image("images/by.svg", width: 80pt),
-    text(size: 8pt)[
-      This work is licensed under a Creative Commons Attribution 4.0 International License.
-      Copyright © 2026 Arnau K. Deprez Santamaria.
-    ],
-  )
-]
-
-#pagebreak()
-
-// Start numbering pages from here onwards
-#set page(numbering: "1")
+// ----------------- Document -----------------
 
 = Introduction
-// = Conceptes previs
-// = State of the art
+#lorem(30)
+
+#lorem(40)
+
+#lorem(10)
+
+#lorem(90)
+
+= Conceptes previs
+
+#lorem(14)
+
+#lorem(37)
+
+#lorem(30)
+
+== Parkinson's Disease
+
+#lorem(14)
+
+#lorem(37)
+
+#lorem(30)
+
+== DaTSCAN
+
+#lorem(24)
+
+#lorem(17)
+
+#lorem(70)
+
+= State of the art
+
+#lorem(37)
+
+#lorem(20)
+
+#lorem(40)
+
+#lorem(15)
+
+#pagebreak()
+
 // = Hipòtesis i objectius
 // = Materials i mètodes
 // = Results
@@ -115,7 +70,12 @@
 
 
 // Per començar la secció d'apèndixs
-// #show: appendix
+#show: appendix
+= Budget
+= Code
+
+This project has been version controlled since I started it and its hosted on GitHub. It can be found
+at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`]
 // - Annex A. Planificació
 // - Annex B. Codi
 // - Annex C. Pressupost
