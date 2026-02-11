@@ -1,9 +1,9 @@
 #import "tfg_template_ak.typ": *
 
 #show: tfg_template_ak.with(
-  title: [Deep Learning-Based Classification of Parkinson's Disease Stages Using
+  title: [Deep Learning-Based Classification \ of Parkinson's Disease Stages \ Using
     DaTSCAN],
-  short_title: [DL-based Classification of PD's Stages via DaTSCAN],
+  short_title: [DL Classification of Parkinson's Stages (DaTSCAN)],
   thx: [#include "aknowledgements.typ"],
 )
 
@@ -33,9 +33,20 @@
 
 #lorem(14)
 
+=== A third level
+
+#lorem(37)
+
+I have the higher ground. #lorem(37)
+
+=== Another 3rd level
 #lorem(37)
 
 #lorem(30)
+
+==== Do we dare another level
+
+I never use this many levels anyway. #lorem(41)
 
 == DaTSCAN
 
@@ -54,6 +65,30 @@
 #lorem(40)
 
 #lorem(15)
+
+= Now some code
+
+Hehe here goes #lorem(49)
+
+== Testing
+
+My super groundbreaking program
+
+#figure(
+  ```c
+  #include <stdio.h>
+
+  int
+  main(int argc, char *argv[]) {
+    printf("Hello world!n");
+    return EXIT_SUCCESS;
+  }
+  ```,
+  caption: [Test],
+)
+
+#lorem(28)
+
 
 #pagebreak()
 
@@ -75,7 +110,7 @@
 = Code
 
 This project has been version controlled since I started it and its hosted on GitHub. It can be found
-at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`]
+at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`].
 // - Annex A. Planificació
 // - Annex B. Codi
 // - Annex C. Pressupost
@@ -83,3 +118,11 @@ at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`]
 
 // = Tables and Data <app1>
 // = Additional Listings <app2>
+
+
+#pagebreak()
+*Colophon*
+
+This thesis was typeset in #link("https://typst.app")[typst] using a custom template inspired by the
+principles in the book #link("https://practicaltypography.com")[Practical Typography by Matthew Butterick]. The body text is set in
+Linux Libertine, headings in Inter, and code listings in Fira Code.
