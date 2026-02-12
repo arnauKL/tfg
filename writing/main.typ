@@ -13,6 +13,7 @@
 // ----------------- Document -----------------
 
 = Introduction
+
 #lorem(30)
 
 #lorem(40)
@@ -43,8 +44,6 @@ I have the higher ground. #lorem(37)
 #lorem(37)
 
 #lorem(30)
-
-==== Do we dare another level
 
 I never use this many levels anyway. #lorem(41)
 
@@ -125,4 +124,4 @@ at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`].
 
 This thesis was typeset in #link("https://typst.app")[typst] using a custom template inspired by the
 principles in the book #link("https://practicaltypography.com")[Practical Typography by Matthew Butterick]. The body text is set in
-Linux Libertine, headings in Inter, and code listings in Fira Code.
+Linux Libertine and code listings in Caskaydia Cove.

@@ -1,6 +1,12 @@
- # Notes per la memòria
+# Notes per la memòria
 
- ## Extretes del document de GEB:
+## Recursos
+
+- [Academic writing playlist](https://www.youtube.com/watch?v=58r1PVapb7o&list=PLFbFmLLP3FsKtw7WyPQ1UPfJjGXc86lWy)
+- [Matthew Butterick's Practical Typography](https://practicaltypography.com)
+
+
+## Instruccions extretes del document de GEB:
 
 La memòria ha d'estar estructurada en les següents parts:   
 
@@ -21,7 +27,7 @@ Pot contenir documents addicionals, si es desitja, formant part dels materials
 complementaris (annexos).
 
 
- ## Presentació (format)
+## Presentació (format)
 
 Per a la redacció del TFG cal utilitzar un sol tipus de codi tipogràfic (Times
 New Roman, Arial, ...) al llarg de tot el treball. 

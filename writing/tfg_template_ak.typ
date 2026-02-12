@@ -2,21 +2,6 @@
 // --------------- function definitions ---------------
 // ----------------------------------------------------
 #let license_note = {
-  grid(
-    columns: 1fr,
-    gutter: 1em,
-    image("images/by.svg", width: 70pt),
-    align(horizon)[
-      #v(.2em)
-      #text(size: 8pt)[
-        This work is licensed under a Creative Commons Attribution 4.0
-        International License. Copyright © 2026 Arnau K. Deprez Santamaria.
-      ]
-    ],
-  )
-}
-
-#let technical_details = {
   set text(size: 8pt)
   grid(
     columns: (auto, 1fr),
@@ -25,13 +10,12 @@
     [
       *License:* \ This work is licensed under a Creative Commons Attribution 4.0
       International License. Copyright © 2026 Arnau K. Deprez Santamaria.
-
     ],
   )
 }
 
 #let appendix(body) = {
-  set heading(numbering: "Appendix" + "A", supplement: [Appendix])
+  set heading(numbering: "A", supplement: [Appendix])
   counter(heading).update(0)
   body
 }
@@ -52,7 +36,8 @@
 
   set page(
     paper: "a4",
-    margin: (x: 4cm, y: 3cm),
+    // margin: (x: 4cm, y: 3cm),
+    margin: (inside: 30mm, outside: 20mm, top: 25mm, bottom: 25mm),
   )
 
   set text(
@@ -87,9 +72,8 @@
   show raw: set block(fill: luma(240), inset: 8pt, radius: 4pt)
 
   // Configure Headings
-  show heading: set text(font: "Inter Display", weight: "bold")
-  show heading.where(level: 1): set text(size: 1em, fill: gray.darken(50%))
-  show heading.where(level: 1): set par(justify: false)
+  show heading: set text(fill: gray.darken(50%))
+  show heading.where(level: 1): set text(size: 1em)
 
   // Links
   show link: it => {
@@ -98,7 +82,7 @@
       set text(fill: rgb("#b8860b")) // Dark Goldenrod
       it
       h(2pt)
-      super(size: 0.6em)[↗]
+      text(size: 0.7em)[#super()[➚]]
     } else {
       // Internal: Just the text (clean)
       it
@@ -126,20 +110,21 @@
     #image("images/EPS.png", width: 50%)
   ]
 
-  place(horizon + center, dy: -2cm)[
+  place(horizon + center, dy: -1cm)[
     #smallcaps()[
       #set text(tracking: 0.06em)
       Final Year Thesis
     ]
 
     #line(stroke: .3pt + gray, length: 60%)
-    #box([#text(
-        1.4em,
-        font: "Inter",
-      )[#title]])
+    #box([#text(1.6em)[
+        *#title*
+      ]])
     #line(stroke: .3pt + gray, length: 60%)
 
-    #box(width: 85%)[
+    #v(2em)
+
+    #box(width: 90%)[
       #grid(
         columns: 2,
         column-gutter: 1fr,
@@ -147,7 +132,7 @@
             size: 1.1em,
           )[Arnau K. Deprez Santamaria]],
         align(right)[#text(size: 0.9em)[*Tutor*] \ #text(
-            size: 1.0em,
+            size: 1.1em,
           )[Adrià Casamitjana]],
       )
     ]
@@ -157,6 +142,7 @@
     #show: smallcaps
     #set text(tracking: 0.06em)
     Biomedical Engineering \
+    Computer Architecture and Technology \
     Academic Year: 2025-2026
   ]
 
@@ -167,7 +153,7 @@
     align(right)[
       #place(horizon + right)[
         #set par(justify: false)
-        #text(size: 2em)[ *Acknowledgements* ]
+        #text(size: 1.6em)[ *Acknowledgements* ]
 
         #thx
       ]
@@ -185,10 +171,17 @@
       it
     }
   }
-  set outline.entry(fill: "")
+  // set outline.entry(fill: "")
+
+  // set outline.entry(
+  //   fill: box(
+  //     width: 1fr,
+  //     repeat(h(1pt) + "." + h(1pt)),
+  //   ),
+  // )
   align(center)[
     #box(
-      width: 75%,
+      width: 90%,
       outline(),
     )
   ]
@@ -198,24 +191,25 @@
   v(1fr)
   place(bottom)[
     #line(stroke: 0.25pt + gray, length: 100%)
-    #technical_details
+    #license_note
   ]
   pagebreak()
 
-  // Add footer with pagenum
+  // Add header with pagenum
   set page(
-    footer: context [
-      #text(.70em, font: "Inter")[
+    header: context [
+      #text(.70em)[
         #v(-2em)
         #line(stroke: .25pt, length: 100%)
         #v(-.5em)
+        #show: smallcaps
+        #set text(tracking: 0.06em)
         #short_title
         #h(1fr)
-        #counter(page).display("1")
+        #counter(page).display("1 of 1", both: true)
       ]
     ],
   )
-
   counter(page).update(1) // Reset page num to 1
 
   // ----------------- actual doc -----------------
