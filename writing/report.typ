@@ -60,6 +60,17 @@ I never use this many levels anyway. #lorem(41)
 
 #lorem(24)
 
+= I really want to use the #link("https://github.com/edgaremy/neural-netz")[neural-netz] package
+
+Like omg I'd love to be able to show my attempts like this (@nn_test).
+
+#figure(
+    image("figures/nn_example.svg"),
+    caption: [It looks so good],
+)<nn_test>
+
+#lorem(30)
+
 #lorem(17)
 
 #lorem(70)
@@ -96,6 +107,8 @@ My super groundbreaking program
 ) <test>
 
 #lorem(28). check out my cool code at @test.
+
+
 
 
 #pagebreak()

@@ -35,6 +35,9 @@
     abstract: none,
     body,
 ) = {
+    import "@preview/easy-typography:0.1.0": *
+    show: easy-typography
+
     // Metadata
     set document(title: title, author: author)
 
@@ -47,6 +50,7 @@
         //font: "Linux Libertine O", // Kinda like Times
         size: 12pt,
         lang: "en",
+        fallback: true,
     )
 
 
@@ -64,17 +68,16 @@
         justify: false,
         leading: 0.65em,
         //first-line-indent: 0pt,
-        spacing: 1.5em,
+        spacing: 1.15em,
     )
 
 
     // Code blocks
-    show raw: set text(font: "CaskaydiaCove NF", size: 9pt)
+    show raw: set text(font: "CaskaydiaCove NF", size: 9pt, weight: "regular")
     show raw: set block(fill: luma(240), inset: 8pt, radius: 4pt)
 
     // Configure Headings
     show heading: set text(fill: gray.darken(50%))
-    show heading.where(level: 1): set text(size: 1em)
 
     // Links
     show link: it => {
@@ -111,7 +114,7 @@
         #smallcaps[ Final Year Thesis ]
 
         #line(stroke: .3pt + gray, length: 60%)
-        #box([#text(1.6em)[*#title*]])
+        #box([#text(1.6em, font: "Libertinus Sans")[*#title*]])
 
 
         #line(stroke: .3pt + gray, length: 60%)
@@ -144,39 +147,36 @@
 
     // ----------------- acknowledgements -----------------
     if thx != [] {
-        align(right)[
-            #place(horizon + right)[
-                #set par(justify: false)
-                #text(size: 1.6em)[ *Acknowledgements* ]
-
-                #thx
+        place(horizon + right)[
+            #set par(justify: false)
+            #text(gray.darken(50%), 1.6em, font: "Libertinus Sans")[
+                *Acknowledgements*
             ]
+
+            #thx
         ]
     }
     pagebreak()
 
+
     // outline
-
-    show outline.entry: it => {
-        if it.level == 1 {
-            v(0.5em) // Add space before new chapters
-            strong(it) // Bold level 1
-        } else {
-            it
-        }
-    }
-
     // set outline.entry(fill: "")
 
-
     align(center)[
+        #show outline.entry: it => {
+            if it.level == 1 {
+                v(0.5em) // Add space before new chapters
+                strong(it) // Bold level 1
+            } else {
+                it
+            }
+        }
         #box(
             width: 90%,
             outline(),
         )
     ]
 
-    set par(justify: true)
 
     v(1fr)
     place(bottom)[
@@ -202,22 +202,8 @@
     )
     counter(page).update(1) // Reset page num to 1
 
-    show heading.where(level: 1): it => [
-        #pagebreak()
-        #block(
-            spacing: 2.5em,
-        )[
-            #v(1em)
-            #place(dy: -1.75em, dx: 1em)[
-                #set text(6em, rgb(12, 12, 50, 8%), font: "C059")
-                _#counter(heading).display(it.numbering)_
-
-            ]
-            #it.body
-        ]
-    ]
-
     // ----------------- actual doc -----------------
 
+    set par(justify: true)
     body
 }
