@@ -1,10 +1,9 @@
-# Notes per la memòria
+# Notes per la redacció de la memòria
 
 ## Recursos
 
 - [Academic writing playlist](https://www.youtube.com/watch?v=58r1PVapb7o&list=PLFbFmLLP3FsKtw7WyPQ1UPfJjGXc86lWy)
 - [Matthew Butterick's Practical Typography](https://practicaltypography.com)
-
 
 ## Instruccions extretes del document de GEB:
 

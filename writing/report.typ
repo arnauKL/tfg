@@ -1,12 +1,12 @@
 #import "tfg_template_ak.typ": *
 
 #show: tfg_template_ak.with(
-  title: [Deep Learning-Based Classification \ of Parkinson's Disease Stages \ Using
-    DaTSCAN],
-  short_title: "DL Classification of Parkinson's Stages (DaTSCAN)",
-  author: "Arnau K. Deprez Santamaria",
-  tutor: "Adrià Casamitjana",
-  thx: [#include "aknowledgements.typ"],
+    title: [Deep Learning-Based Classification \ of Parkinson's Disease Stages \
+        Using DaTSCAN],
+    short_title: "DL Classification of Parkinson's Stages (DaTSCAN)",
+    author: "Arnau K. Deprez Santamaria",
+    tutor: "Adrià Casamitjana",
+    thx: [ I'd like to thank my mom. ],
 )
 
 // Project structure:
@@ -83,16 +83,16 @@ Hehe here goes #lorem(49)
 My super groundbreaking program
 
 #figure(
-  ```c
-  #include <stdio.h>
+    ```c
+    #include <stdio.h>
 
-  int
-  main(int argc, char *argv[]) {
-    printf("Hello world!n");
-    return EXIT_SUCCESS;
-  }
-  ```,
-  caption: [Test],
+    int
+    main(int argc, char *argv[]) {
+      printf("Hello world!n");
+      return EXIT_SUCCESS;
+    }
+    ```,
+    caption: [Test],
 ) <test>
 
 #lorem(28). check out my cool code at @test.
@@ -115,11 +115,21 @@ My super groundbreaking program
 // Per començar la secció d'apèndixs
 #show: appendix
 = Budget
+
 = Code
 
-This project has been version controlled since I started it and its hosted on GitHub. It can be found
-at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`].
+This project has been version controlled since I started it and its hosted on
+GitHub. It can be found at #link(
+    "https://github.com/arnauKL/tfg",
+)[`arnauKL/tfg`].
 // - Annex A. Planificació
+
+#figure(
+    image("figures/gantt.svg"),
+    caption: [ Diagrama de Gantt. ],
+    alt: "...",
+)
+
 // - Annex B. Codi
 // - Annex C. Pressupost
 // - Annex D. Comitè d'Ètica
@@ -131,9 +141,11 @@ at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`].
 #pagebreak()
 *Colophon*
 
-This thesis was typeset in #link("https://typst.app")[typst] using a custom template inspired by the
-principles in the book #link("https://practicaltypography.com")[Practical Typography by Matthew Butterick]. The body text is set in
-Linux Libertine and code listings in Caskaydia Cove.
+This thesis was typeset in #link("https://typst.app")[typst] using a custom
+template inspired by the principles in the book #link(
+    "https://practicaltypography.com",
+)[Practical Typography by Matthew Butterick]. The body text is set in Linux
+Libertine and code listings in Caskaydia Cove.
 
 The cover was inspired by:
 - #text(red)[idk the link]
