@@ -77,17 +77,13 @@
 
   // Links
   show link: it => {
-    if (str(it.dest).contains("http")) {
-      // External: Subtle color + small arrow
       set text(fill: rgb("#b8860b")) // Dark Goldenrod
       it
       h(2pt)
       text(size: 0.7em)[#super()[➚]]
-    } else {
-      // Internal: Just the text (clean)
-      it
-    }
   }
+
+  show ref: set text(rgb("#872050"))
 
   // GEB-specifics
 

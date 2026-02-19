@@ -34,9 +34,10 @@
 
 #lorem(30)
 
-== Parkinson's Disease
+== Parkinson's Disease <parkinsons>
 
 #lorem(14)
+
 
 === A third level
 
@@ -46,6 +47,8 @@ I have the higher ground. #lorem(37)
 
 === Another 3rd level
 #lorem(37)
+
+In @parkinsons, I said so. #lorem(21)
 
 #lorem(30)
 
@@ -90,9 +93,9 @@ My super groundbreaking program
   }
   ```,
   caption: [Test],
-)
+) <test>
 
-#lorem(28)
+#lorem(28). check out my cool code at @test.
 
 
 #pagebreak()
@@ -131,3 +134,6 @@ at #link("https://github.com/arnauKL/tfg")[`arnauKL/tfg`].
 This thesis was typeset in #link("https://typst.app")[typst] using a custom template inspired by the
 principles in the book #link("https://practicaltypography.com")[Practical Typography by Matthew Butterick]. The body text is set in
 Linux Libertine and code listings in Caskaydia Cove.
+
+The cover was inspired by:
+- #text(red)[idk the link]
