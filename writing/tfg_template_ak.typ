@@ -2,14 +2,15 @@
 // --------------- function definitions ---------------
 // ----------------------------------------------------
 #let license_note = {
-  set text(size: 8pt)
+  [ #smallcaps[Copyright 2026] Arnau K. Deprez Santamaria]
   grid(
     columns: (auto, 1fr),
     gutter: 1em,
-    image("images/by.svg", width: 70pt),
+    image("images/by.svg", width: 100pt),
     [
-      *License:* \ This work is licensed under a Creative Commons Attribution 4.0
-      International License. Copyright © 2026 Arnau K. Deprez Santamaria.
+      This work is licensed under the _Creative Commons Attribution 4.0
+      International License_. To view a copy of this license, visit
+      #link("http://creativecommons.org/licenses/by/4.0/").
     ],
   )
 }
@@ -27,24 +28,36 @@
 #let tfg_template_ak(
   title: [Untitled],
   short_title: [#title],
+  author: [],
+  tutor: [],
   thx: [],
   abstract: none,
   body,
 ) = {
   // Metadata
-  set document(title: title)
+  set document(title: title, author: author)
 
   set page(
     paper: "a4",
-    // margin: (x: 4cm, y: 3cm),
-    margin: (inside: 30mm, outside: 20mm, top: 25mm, bottom: 25mm),
+    margin: (x: 3.5cm, y: 3cm),
   )
 
   set text(
-    font: "Linux Libertine", // Kinda like Times
+    //font: "Linux Libertine O", // Kinda like Times
     size: 12pt,
     lang: "en",
   )
+
+  
+  set heading(numbering: "1.a.i")
+  show heading: set text(font: "Inter")
+  show heading.where(level: 1): set text(1em)
+  // show heading.where(level: 1): it => block[
+  //   #counter(heading).display(it.numbering)
+  //   #it.body
+  // ]
+
+  show smallcaps: set text(tracking: 0.06em)
 
   set par(
     justify: false,
@@ -53,19 +66,6 @@
     spacing: 1.5em,
   )
 
-  // set heading(numbering: "1.")
-  set heading(
-    numbering: (..nums) => {
-      let values = nums.pos()
-      if values.len() == 1 {
-        return numbering("1.", ..values)
-      } else if values.len() == 2 {
-        return numbering("1.a", ..values)
-      } else {
-        return numbering("1.a.i", ..values)
-      }
-    },
-  )
 
   // Code blocks
   show raw: set text(font: "CaskaydiaCove NF", size: 9pt)
@@ -111,15 +111,12 @@
   ]
 
   place(horizon + center, dy: -1cm)[
-    #smallcaps()[
-      #set text(tracking: 0.06em)
-      Final Year Thesis
-    ]
+    #smallcaps[ Final Year Thesis ]
 
     #line(stroke: .3pt + gray, length: 60%)
-    #box([#text(1.6em)[
-        *#title*
-      ]])
+    #box([#text(1.6em)[*#title*]])
+
+        
     #line(stroke: .3pt + gray, length: 60%)
 
     #v(2em)
@@ -128,12 +125,12 @@
       #grid(
         columns: 2,
         column-gutter: 1fr,
-        align(left)[#text(size: 0.9em)[*Author*] \ #text(
+        align(left)[#smallcaps[Author] \ #text(
+            size: 1.1em, 
+          )[#author]],
+        align(right)[#smallcaps[Tutor] \ #text(
             size: 1.1em,
-          )[Arnau K. Deprez Santamaria]],
-        align(right)[#text(size: 0.9em)[*Tutor*] \ #text(
-            size: 1.1em,
-          )[Adrià Casamitjana]],
+          )[#tutor]],
       )
     ]
   ]
@@ -161,7 +158,7 @@
   }
   pagebreak()
 
-  // outline and license note
+  // outline 
 
   show outline.entry: it => {
     if it.level == 1 {
@@ -171,14 +168,10 @@
       it
     }
   }
+
   // set outline.entry(fill: "")
 
-  // set outline.entry(
-  //   fill: box(
-  //     width: 1fr,
-  //     repeat(h(1pt) + "." + h(1pt)),
-  //   ),
-  // )
+
   align(center)[
     #box(
       width: 90%,
@@ -211,6 +204,21 @@
     ],
   )
   counter(page).update(1) // Reset page num to 1
+
+  show heading.where(level: 1): it => [
+    #pagebreak()
+    #block(
+      spacing: 2.5em,
+    )[
+      #v(1em)
+      #place(dy: -1.75em, dx: 1em)[
+        #set text(6em, rgb(12, 12, 50, 8%), font: "C059")
+          _#counter(heading).display(it.numbering)_
+          
+      ]
+      #it.body
+    ]
+  ]
 
   // ----------------- actual doc -----------------
 

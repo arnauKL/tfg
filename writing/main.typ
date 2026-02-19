@@ -3,7 +3,9 @@
 #show: tfg_template_ak.with(
   title: [Deep Learning-Based Classification \ of Parkinson's Disease Stages \ Using
     DaTSCAN],
-  short_title: [DL Classification of Parkinson's Stages (DaTSCAN)],
+  short_title: "DL Classification of Parkinson's Stages (DaTSCAN)",
+  author: "Arnau K. Deprez Santamaria",
+  tutor: "Adrià Casamitjana",
   thx: [#include "aknowledgements.typ"],
 )
 
@@ -11,6 +13,8 @@
 // https://sitandr.github.io/typst-examples-book/book/basics/must_know/project_struct.html
 
 // ----------------- Document -----------------
+
+//#set heading(numbering: "(I)")
 
 = Introduction
 
@@ -44,6 +48,8 @@ I have the higher ground. #lorem(37)
 #lorem(37)
 
 #lorem(30)
+
+==== A fourth??
 
 I never use this many levels anyway. #lorem(41)
 
